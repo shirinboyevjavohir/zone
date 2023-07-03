@@ -1,13 +1,19 @@
-import { PaletteColorOptions, ThemeOptions } from "@mui/material/styles";
+import { PaletteColorOptions, ThemeOptions } from '@mui/material/styles'
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface Palette {
-    white?: PaletteColor;
+    white?: PaletteColor
   }
   interface PaletteOptions {
-    white?: PaletteColorOptions;
+    white?: PaletteColorOptions
+  }
+  interface PaletteOptions {
+    black?: PaletteColorOptions
   }
   interface SimplePaletteColorOptions {
-    light?: string;
+    light?: string
+  }
+  interface SimplePaletteColorOptions {
+    main?: string
   }
 }

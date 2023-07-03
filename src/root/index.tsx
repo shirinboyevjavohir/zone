@@ -1,19 +1,25 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Navbar from "../components/Navbar";
-import Home from "../components/Home";
-import { Box } from "@mui/material";
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+import Navbar from '../components/Navbar'
+import Home from '../components/Home'
+import { Box } from '@mui/material'
 
 const theme = createTheme({
   palette: {
     warning: {
-      main: "#FA541C",
+      main: '#FA541C',
     },
     white: {
-      main: "#ffffff",
-    }
+      main: '#ffffff',
+    },
+    black: {
+      main: '#212B36',
+    },
   },
-});
+  typography: {
+    fontFamily: ['Public Sans', 'Barlow', 'sans-serif'].join(','),
+  },
+})
 
 const Root = () => {
   return (
@@ -29,7 +35,7 @@ const Root = () => {
         </Box>
       </ThemeProvider>
     </BrowserRouter>
-  );
-};
+  )
+}
 
-export default Root;
+export default Root

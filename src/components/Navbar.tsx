@@ -1,89 +1,123 @@
-import * as React from "react";
-import { useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import { Outlet } from "react-router-dom";
-// ! Import Icons
-import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import * as React from 'react'
+import { useState } from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Menu from '@mui/material/Menu'
+import Container from '@mui/material/Container'
+import Button from '@mui/material/Button'
+import MenuItem from '@mui/material/MenuItem'
+import AdbIcon from '@mui/icons-material/Adb'
+import { Outlet } from 'react-router-dom'
+import MenuIcon from '@mui/icons-material/Menu'
+import SearchIcon from '@mui/icons-material/Search'
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import { Badge } from '@mui/material'
 
-const pages = ["Home", "Components", "Documentation"];
+const pages = ['Home', 'Components', 'Documentation']
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const NavbarLinkStyled = {
   my: 2,
-  color: "white.main",
-  display: "flex",
-  textTransform: "capitalize",
-  fontSize: "0.875rem",
+  color: 'white.main',
+  display: 'flex',
+  textTransform: 'capitalize',
+  fontSize: '0.875rem',
   '&:hover': {
-    color: "warning.main"
-  }
-};
+    color: 'warning.main',
+  },
+}
 
 function ResponsiveAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const open = Boolean(anchorEl)
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(e.currentTarget);
-  };
+    setAnchorEl(e.currentTarget)
+  }
   const handleClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
-  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
+  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+    setAnchorElNav(event.currentTarget)
+  }
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
+    setAnchorElUser(event.currentTarget)
+  }
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+    setAnchorElNav(null)
+  }
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+    setAnchorElUser(null)
+  }
 
   return (
     <>
-      <AppBar position="fixed" sx={{ background: "transparent" }}>
+      <AppBar position="fixed" sx={{ background: 'transparent' }}>
         <Container>
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            {/* Logo start */}
             <Typography
               variant="h6"
               noWrap
               component="a"
               href="/"
               sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
+                display: {},
+                fontFamily: 'monospace',
+                fontWeight: 600,
+                letterSpacing: '.1rem',
+                color: 'white.main',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                fontSize: '26px',
               }}
             >
               ZONE
             </Typography>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '20px',
+                ml: 2,
+                mr: 2,
+                position: 'relative',
+              }}
+            >
+              <Badge
+                sx={{
+                  '& .MuiBadge-badge': {
+                    padding: '0px 5px',
+                    fontSize: 11,
+                    color: '#006C9C',
+                    borderRadius: '6px',
+                    backgroundColor: 'rgba(0, 184, 217, 0.16)',
+                  },
+                  position: 'absolute',
+                  top: '-15px',
+                  left: '2px',
+                }}
+                badgeContent={'V2.0'}
+                color="primary"
+              />
+              <Badge
+                sx={{ position: 'absolute', left: '-10px', bottom: '-5px' }}
+                color="error"
+                variant="dot"
+              />
+            </Box>
+            {/* Logo end */}
 
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -98,18 +132,18 @@ function ResponsiveAppBar() {
                 id="menu-appbar"
                 anchorEl={anchorElNav}
                 anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
+                  vertical: 'bottom',
+                  horizontal: 'left',
                 }}
                 keepMounted
                 transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
+                  vertical: 'top',
+                  horizontal: 'left',
                 }}
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
-                  display: { xs: "block", md: "none" },
+                  display: { xs: 'block', md: 'none' },
                 }}
               >
                 {pages.map((page) => (
@@ -118,43 +152,44 @@ function ResponsiveAppBar() {
                   </MenuItem>
                 ))}
               </Menu>
-            </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
+            </Box> */}
+            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+            {/* <Typography
               variant="h5"
               noWrap
               component="a"
               href=""
               sx={{
                 mr: 2,
-                display: { xs: "flex", md: "none" },
+                display: { xs: 'flex', md: 'none' },
                 flexGrow: 1,
-                fontFamily: "monospace",
+                fontFamily: 'monospace',
                 fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
               }}
             >
               LOGO
-            </Typography>
-            <Box  sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            </Typography> */}
+
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Box
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  position: "relative",
+                  display: 'flex',
+                  alignItems: 'center',
+                  position: 'relative',
                 }}
               >
-                <Box className="red"
+                <Box
                   sx={{
-                    width: "6px",
-                    height: "6px",
-                    borderRadius: "50%",
-                    backgroundColor: "red",
-                    position: "absolute",
-                    left: "3px",
-                    display: "none",
+                    width: '6px',
+                    height: '6px',
+                    borderRadius: '50%',
+                    backgroundColor: 'warning.main',
+                    position: 'absolute',
+                    left: '3px',
+                    display: 'none',
                   }}
                 ></Box>
                 <Button onClick={handleCloseNavMenu} sx={NavbarLinkStyled}>
@@ -167,9 +202,9 @@ function ResponsiveAppBar() {
               <Button
                 id="resources-button"
                 onClick={handleClick}
-                aria-controls={open ? "resources-menu" : undefined}
+                aria-controls={open ? 'resources-menu' : undefined}
                 aria-haspopup="true"
-                aria-aria-expanded={open ? "true" : undefined}
+                aria-expanded={open ? true : undefined}
                 endIcon={<KeyboardArrowDownIcon />}
                 sx={NavbarLinkStyled}
               >
@@ -183,36 +218,40 @@ function ResponsiveAppBar() {
               id="resources-menu"
               anchorEl={anchorEl}
               open={open}
-              MenuListProps={{ "aria-labelledby": "resources-button" }}
+              MenuListProps={{ 'aria-labelledby': 'resources-button' }}
               onClose={handleClose}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "center",
+                vertical: 'bottom',
+                horizontal: 'center',
               }}
               transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
+                vertical: 'top',
+                horizontal: 'center',
               }}
             >
               <MenuItem onClick={handleClose}>Blog</MenuItem>
               <MenuItem onClick={handleClose}>Psops</MenuItem>
+              <Box>
+                <Typography>Salom</Typography>
+              </Box>
             </Menu>
 
-            <Box sx={{ flexGrow: 0, display: "flex", gap: "4px" }}>
+            {/* Start icons */}
+            <Box sx={{ flexGrow: 0, display: 'flex', gap: '4px' }}>
               <IconButton aria-label="search">
-                <SearchIcon sx={{ color: "white.main" }} />
+                <SearchIcon sx={{ color: 'white.main' }} />
               </IconButton>
               <IconButton
                 aria-label="setting"
                 sx={{
-                  color: "white.main",
-                  animation: "spin 4s linear infinite",
-                  "@keyframes spin": {
-                    "0%": {
-                      transform: "rotate(0deg)",
+                  color: 'white.main',
+                  animation: 'spin 4s linear infinite',
+                  '@keyframes spin': {
+                    '0%': {
+                      transform: 'rotate(0deg)',
                     },
-                    "100%": {
-                      transform: "rotate(360deg)",
+                    '100%': {
+                      transform: 'rotate(360deg)',
                     },
                   },
                 }}
@@ -223,9 +262,9 @@ function ResponsiveAppBar() {
                 variant="contained"
                 size="small"
                 sx={{
-                  textTransform: "capitalize",
-                  padding: "6px 16px",
-                  borderRadius: "8px",
+                  textTransform: 'capitalize',
+                  padding: '6px 16px',
+                  borderRadius: '8px',
                 }}
               >
                 Buy Now
@@ -236,6 +275,6 @@ function ResponsiveAppBar() {
       </AppBar>
       <Outlet />
     </>
-  );
+  )
 }
-export default ResponsiveAppBar;
+export default ResponsiveAppBar

@@ -1,0 +1,23 @@
+[
+  {
+    "userId": 1,
+    "imgSrc": "https://firebasestorage.googleapis.com/v0/b/korona-taxi-ef833.appspot.com/o/account.svg?alt=media&token=4d6b2bdc-a975-4b32-a43b-c275bc17aad2",
+    "subTitle": "step 1",
+    "title": "Create an account",
+    "info": "Nunc nonummy metus. Donec elit libero."
+  },
+  {
+    "userId": 2,
+    "imgSrc": "https://firebasestorage.googleapis.com/v0/b/korona-taxi-ef833.appspot.com/o/account.svg?alt=media&token=4d6b2bdc-a975-4b32-a43b-c275bc17aad2",
+    "subTitle": "step 2",
+    "title": "Complete your profile",
+    "info": "Nunc nonummy metus. Donec elit libero."
+  },
+  {
+    "userId": 3,
+    "imgSrc": "https://firebasestorage.googleapis.com/v0/b/korona-taxi-ef833.appspot.com/o/search.svg?alt=media&token=36619f79-9fe4-4c23-9115-4f517459160b",
+    "subTitle": "step 3",
+    "title": "Search your job",
+    "info": "Nunc nonummy metus. Donec elit libero."
+  }
+]
