@@ -1,0 +1,74 @@
+[
+  {
+    "userId": 1,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_1.png",
+    "subTitle": "101 jobs",
+    "title": "Lueilwitz and Sons"
+  },
+  {
+    "userId": 2,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_2.png",
+    "subTitle": "102 jobs",
+    "title": "Gleichner, Mueller and Tromp"
+  },
+  {
+    "userId": 3,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_3.png",
+    "subTitle": "103 jobs",
+    "title": "Nikolaus - Leuschke"
+  },
+  {
+    "userId": 4,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_4.png",
+    "subTitle": "104 jobs",
+    "title": "Hegmann, Kreiger and Bayer"
+  },
+  {
+    "userId": 5,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_5.png",
+    "subTitle": "105 jobs",
+    "title": "Grimes Inc"
+  },
+  {
+    "userId": 6,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_6.png",
+    "subTitle": "106 jobs",
+    "title": "Durgan - Murazik"
+  },
+  {
+    "userId": 7,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_7.png",
+    "subTitle": "107 jobs",
+    "title": "Altenwerth, Medhurst and Roberts"
+  },
+  {
+    "userId": 8,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_8.png",
+    "subTitle": "108 jobs",
+    "title": "Raynor Group"
+  },
+  {
+    "userId": 9,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_9.png",
+    "subTitle": "109 jobs",
+    "title": "Mraz, Donnelly and Collins"
+  },
+  {
+    "userId": 10,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_10.png",
+    "subTitle": "110 jobs",
+    "title": "Padberg - Bailey"
+  },
+  {
+    "userId": 11,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_11.png",
+    "subTitle": "111 jobs",
+    "title": "Heidenreich, Stokes and Parker"
+  },
+  {
+    "userId": 12,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_12.png",
+    "subTitle": "112 jobs",
+    "title": "Pagac and Sons"
+  }
+]

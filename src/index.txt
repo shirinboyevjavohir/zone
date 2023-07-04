@@ -1,3 +1,4 @@
 <==== 02.07.2023 ====>
-    1. svg ning rangini ko'rib chiqish
-    
+    1. svg ning rangini ko'rib chiqish ✔
+<==== 04.07.2023 ====>
+    1. Top Companies dagi next va prev buttonlariga style berish
