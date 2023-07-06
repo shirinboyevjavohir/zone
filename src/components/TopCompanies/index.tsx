@@ -73,6 +73,7 @@ const TopCompanies = () => {
             {Jobs.map((job) => {
               return (
                 <Box
+                  key={job.userId}
                   sx={{
                     height: '280px',
                     marginTop: '80px',

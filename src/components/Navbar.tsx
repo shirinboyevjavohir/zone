@@ -63,7 +63,17 @@ function ResponsiveAppBar() {
     <>
       <AppBar position="fixed" sx={{ background: 'transparent' }}>
         <Container>
-          <Toolbar disableGutters>
+          <Toolbar
+            disableGutters
+            sx={{
+              '& .css-160mppc-MuiToolbar-root': {
+                md: {
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                },
+              },
+            }}
+          >
             {/* Logo start */}
             <Typography
               variant="h6"
@@ -265,6 +275,8 @@ function ResponsiveAppBar() {
                   textTransform: 'capitalize',
                   padding: '6px 16px',
                   borderRadius: '8px',
+                  fontWeight: '700',
+                  fontSize: '0.875rem',
                 }}
               >
                 Buy Now

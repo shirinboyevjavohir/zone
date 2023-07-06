@@ -1,0 +1,68 @@
+[
+  {
+    "userId": 1,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_1.png",
+    "subTitle": "Altenwerth, Medhurst and Roberts",
+    "title": "Corporate Data Officer",
+    "location": "Sierra Leone",
+    "year": "7 Year Exp",
+    "time": "Freelance",
+    "price": "Competitive",
+    "status": "Intern/Student"
+  },
+  {
+    "userId": 2,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_2.png",
+    "subTitle": "Raynor Group",
+    "title": "Dynamic Quality Technician",
+    "location": "Bermuda",
+    "year": "8 Year Exp",
+    "time": "Part Time",
+    "price": "$12,000",
+    "status": "Manager"
+  },
+  {
+    "userId": 3,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_8.png",
+    "subTitle": "Mraz, Donnelly and Collins",
+    "title": "Relational Mobility Technician",
+    "location": "Italy",
+    "year": "9 Year Exp",
+    "time": "Full Time",
+    "price": "$12,000",
+    "status": "No Experience"
+  },
+  {
+    "userId": 4,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_7.png",
+    "subTitle": "Padberg - Bailey",
+    "title": "Senior Web Engineer",
+    "location": "Iran",
+    "year": "10 Year Exp",
+    "time": "Part Time",
+    "price": "Competitive",
+    "status": "Manager"
+  },
+  {
+    "userId": 5,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_5.png",
+    "subTitle": "Heidenreich, Stokes and Parker",
+    "title": "Dynamic Markets Administrator",
+    "location": "Denmark",
+    "year": "11 Year Exp",
+    "time": "Freelance",
+    "price": "$12,000",
+    "status": "Intern/Student"
+  },
+  {
+    "userId": 6,
+    "imgSrc": "https://zone-ui.vercel.app/assets/images/company/company_6.png",
+    "subTitle": "Pagac and Sons",
+    "title": "Chief Research Analyst",
+    "location": "Congo",
+    "year": "12 Year Exp",
+    "time": "Part Time",
+    "price": "$12,000",
+    "status": "Manager"
+  }
+]

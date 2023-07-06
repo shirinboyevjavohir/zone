@@ -1,13 +1,12 @@
 import { Box } from '@mui/material'
 import JobsBlock from './JobsBlock'
 import TopCompanies from './TopCompanies'
+import FeaturedJobs from './FeaturedJobs'
 
 const Home = () => {
   return (
     <Box
       sx={{
-        width: '100%',
-        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         background:
@@ -21,6 +20,7 @@ const Home = () => {
       }}
     >
       <JobsBlock />
+      <FeaturedJobs />
       <TopCompanies />
     </Box>
   )
