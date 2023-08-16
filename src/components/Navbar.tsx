@@ -11,11 +11,11 @@ import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
 import { Outlet } from 'react-router-dom'
-import MenuIcon from '@mui/icons-material/Menu'
 import SearchIcon from '@mui/icons-material/Search'
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Badge } from '@mui/material'
+import MenuIcon from '@mui/icons-material/Menu'
+import { Badge, Drawer } from '@mui/material'
 
 const pages = ['Home', 'Components', 'Documentation']
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -30,8 +30,20 @@ const NavbarLinkStyled = {
     color: 'warning.main',
   },
 }
+const NavbarLinkStyledDark = {
+  color: 'black.main',
+  display: 'flex',
+  textTransform: 'capitalize',
+  fontSize: '0.875rem',
+  '&:hover': {
+    color: 'warning.main',
+  },
+  width: '100%',
+  justifyContent: 'flex-start',
+}
 
 function ResponsiveAppBar() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -52,7 +64,7 @@ function ResponsiveAppBar() {
   }
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
+    setIsDrawerOpen(false)
   }
 
   const handleCloseUserMenu = () => {
@@ -61,127 +73,69 @@ function ResponsiveAppBar() {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ background: 'transparent' }}>
+      <AppBar position="fixed" sx={{ background: 'dark.main' }}>
         <Container>
           <Toolbar
             disableGutters
             sx={{
-              '& .css-160mppc-MuiToolbar-root': {
-                md: {
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                },
-              },
+              display: 'flex',
+              justifyContent: 'space-evenly',
             }}
           >
             {/* Logo start */}
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                display: {},
-                fontFamily: 'monospace',
-                fontWeight: 600,
-                letterSpacing: '.1rem',
-                color: 'white.main',
-                textDecoration: 'none',
-                cursor: 'pointer',
-                fontSize: '26px',
-              }}
-            >
-              ZONE
-            </Typography>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '20px',
-                ml: 2,
-                mr: 2,
-                position: 'relative',
-              }}
-            >
-              <Badge
+            <Box>
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
                 sx={{
-                  '& .MuiBadge-badge': {
-                    padding: '0px 5px',
-                    fontSize: 11,
-                    color: '#006C9C',
-                    borderRadius: '6px',
-                    backgroundColor: 'rgba(0, 184, 217, 0.16)',
-                  },
-                  position: 'absolute',
-                  top: '-15px',
-                  left: '2px',
+                  display: {},
+                  fontFamily: 'monospace',
+                  fontWeight: 600,
+                  letterSpacing: '.1rem',
+                  color: 'white.main',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  fontSize: '26px',
                 }}
-                badgeContent={'V2.0'}
-                color="primary"
-              />
-              <Badge
-                sx={{ position: 'absolute', left: '-10px', bottom: '-5px' }}
-                color="error"
-                variant="dot"
-              />
+              >
+                ZONE
+              </Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '20px',
+                  ml: 2,
+                  mr: 2,
+                  position: 'relative',
+                }}
+              >
+                <Badge
+                  sx={{
+                    '& .MuiBadge-badge': {
+                      padding: '0px 5px',
+                      fontSize: 11,
+                      color: '#006C9C',
+                      borderRadius: '6px',
+                      backgroundColor: 'rgba(0, 184, 217, 0.16)',
+                    },
+                    position: 'absolute',
+                    top: '-15px',
+                    left: '2px',
+                  }}
+                  badgeContent={'V2.0'}
+                  color="primary"
+                />
+                <Badge
+                  sx={{ position: 'absolute', left: '-10px', bottom: '-5px' }}
+                  color="error"
+                  variant="dot"
+                />
+              </Box>
             </Box>
             {/* Logo end */}
-
-            {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'left',
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'left',
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: 'block', md: 'none' },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography>{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box> */}
-            {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-            {/* <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href=""
-              sx={{
-                mr: 2,
-                display: { xs: 'flex', md: 'none' },
-                flexGrow: 1,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-              }}
-            >
-              LOGO
-            </Typography> */}
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               <Box
@@ -247,7 +201,16 @@ function ResponsiveAppBar() {
             </Menu>
 
             {/* Start icons */}
-            <Box sx={{ flexGrow: 0, display: 'flex', gap: '4px' }}>
+            <Box
+              sx={{
+                flexGrow: 0,
+                display: 'flex',
+                gap: '4px',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                textAlign: 'right',
+              }}
+            >
               <IconButton aria-label="search">
                 <SearchIcon sx={{ color: 'white.main' }} />
               </IconButton>
@@ -273,14 +236,115 @@ function ResponsiveAppBar() {
                 size="small"
                 sx={{
                   textTransform: 'capitalize',
-                  padding: '6px 16px',
+                  padding: '4px 14px',
                   borderRadius: '8px',
                   fontWeight: '700',
                   fontSize: '0.875rem',
+                  minWidth: '64px',
+                  backgroundColor: 'rgb(33, 43, 54)',
+                  height: '35px',
+                  marginLeft: '8px',
+                  '&:hover': {
+                    backgroundColor: 'rgb(69, 79, 91)',
+                  },
+                  display: { md: 'block', xs: 'none' },
                 }}
               >
                 Buy Now
               </Button>
+              {/* Drawer Side Menu Start */}
+              <IconButton
+                sx={{ display: { md: 'none', xs: 'flex' } }}
+                onClick={() => setIsDrawerOpen(true)}
+              >
+                <MenuIcon sx={{ color: 'white.main' }} />
+              </IconButton>
+
+              <Drawer
+                anchor="left"
+                open={isDrawerOpen}
+                onClose={() => setIsDrawerOpen(false)}
+              >
+                <Box p={2} sx={{ width: '250px' }} role="presentation">
+                  <Box
+                    onClick={() => setIsDrawerOpen(false)}
+                    sx={{ position: 'relative', cursor: 'pointer' }}
+                  >
+                    <Typography
+                      variant="h6"
+                      noWrap
+                      component="a"
+                      href="/"
+                      sx={{
+                        display: {},
+                        fontFamily: 'Barlow',
+                        fontWeight: 900,
+                        letterSpacing: '.1rem',
+                        color: 'black.main',
+                        textDecoration: 'none',
+                        cursor: 'pointer',
+                        fontSize: '24px',
+                      }}
+                    >
+                      ZONE
+                    </Typography>
+                    <Badge
+                      sx={{
+                        position: 'absolute',
+                        bottom: '13px',
+                        marginLeft: '4px',
+                      }}
+                      color="error"
+                      variant="dot"
+                    />
+                  </Box>
+
+                  <Box sx={{ paddingLeft: '10px', marginTop: '10px' }}>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={NavbarLinkStyledDark}
+                    >
+                      Home
+                    </Button>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={NavbarLinkStyledDark}
+                    >
+                      Components
+                    </Button>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={NavbarLinkStyledDark}
+                    >
+                      Pages
+                    </Button>
+                    <Button
+                      onClick={handleCloseNavMenu}
+                      sx={NavbarLinkStyledDark}
+                    >
+                      Docs
+                    </Button>
+                    <Button
+                      onClick={() => setIsDrawerOpen(false)}
+                      variant="contained"
+                      sx={{
+                        display: 'block',
+                        width: '100%',
+                        marginTop: '8px',
+                        textTransform: 'capitalize',
+                        borderRadius: '8px',
+                        backgroundColor: 'rgb(33, 43, 54)',
+                        '&:hover': {
+                          backgroundColor: 'rgb(69, 79, 91)',
+                        },
+                      }}
+                    >
+                      Buy Now
+                    </Button>
+                  </Box>
+                </Box>
+              </Drawer>
+              {/* Drawer Side Menu Finish */}
             </Box>
           </Toolbar>
         </Container>

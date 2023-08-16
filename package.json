@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch ./server/db.ts -p 3001"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -24,6 +25,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "@types/json-server": "^0.14.4",
     "@types/node": "^20.3.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
@@ -34,7 +36,15 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "json-server": "^0.17.3",
+    "nodemon": "^3.0.0",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
-  }
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

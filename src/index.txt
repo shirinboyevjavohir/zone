@@ -2,3 +2,4 @@
     1. svg ning rangini ko'rib chiqish ✔
 <==== 04.07.2023 ====>
     1. Top Companies dagi next va prev buttonlariga style berish
+    2. Hot Categories component dagi card hover bo'lganda image colorini o'zgartirish
